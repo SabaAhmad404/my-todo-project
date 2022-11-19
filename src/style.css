@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  height: 20px;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-refresh-logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.todo-list {
+  width: 70%;
+  border: 1px solid gray;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+}
+
+.type-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.input-text {
+  border: none;
+}
+
+.clear {
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.enter-images {
+  height: 20px;
+  width: 20px;
+}
+
+.refresh {
+  height: 20px;
+  width: 20px;
+}
+
+.dots-image {
+  height: 20px;
+  width: 20px;
+}
+
+.dish {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.para-text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
