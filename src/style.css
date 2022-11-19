@@ -16,7 +16,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .title-refresh-logo {
@@ -24,7 +23,6 @@ body {
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid gray;
-
 }
 
 .todo-list {
@@ -41,7 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid gray ;
+  border-bottom: 1px solid gray;
 }
 
 .input-text {
