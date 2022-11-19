@@ -1,31 +1,26 @@
 import './style.css';
+import dots from './images/dots.png';
+import CreateTask from './modules/createTask.js';
 
 // import bin from './images/bin.png';
-import dots from './images/dots.png';
+
 import enter from './images/enter.png';
 import refresh from './images/refresh.png';
 
-const fresh = document.querySelector('.refresh');
-fresh.src = refresh;
-const imgEnter = document.querySelector('.enter-images');
-imgEnter.src = enter;
-const arr = [
-  {
-    description: 'wash the dishes',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'wash your clothes',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'clean your house',
-    completed: true,
-    index: 2,
-  },
-];
+let arr = [];
+const enterButton = document.querySelector('.enter-images');
+enterButton.addEventListener('click', () => {
+  const str = document.querySelector('#place').value;
+  const number = arr.length;
+  const boolen = false;
+  const newTask = new CreateTask(str, boolen, number);
+  arr.push(newTask);
+  localStorage.setItem('arr', JSON.stringify(arr));
+  const texture = document.querySelector('#place');
+  texture.value = '';
+  window.location.reload();
+});
+arr = JSON.parse(localStorage.getItem('arr')) || [];
 for (let i = 0; i < arr.length; i += 1) {
   const list = document.querySelector('.items');
   const listItem = document.createElement('div');
@@ -44,5 +39,28 @@ for (let i = 0; i < arr.length; i += 1) {
   const image = document.createElement('img');
   image.classList.add('dots-image');
   image.src = dots;
+  /* eslint-disable */
+  const deleteBook = () => {
+    const target = image.id;
+    arr.splice(target, 1);
+
+    let newid = 0;
+    if (arr.length > 0) {
+      arr.forEach((check) => {
+        check.id = newid;
+        newid += 1;
+      });
+    }
+  };
+  image.addEventListener("click", () => {
+    arr = JSON.parse(localStorage.getItem("arr")) || [];
+    deleteBook();
+    localStorage.setItem("arr", JSON.stringify(arr));
+    window.location.reload();
+  });
   paraDiv.append(image);
 }
+
+const fresh = document.querySelector(".refresh");
+fresh.src = refresh;
+enterButton.src = enter;
